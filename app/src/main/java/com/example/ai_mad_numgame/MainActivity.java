@@ -77,10 +77,45 @@ public class MainActivity extends AppCompatActivity {
         String operator = operators[random.nextInt(4)];
         textView2.setText(operand1 + operator + operand2);
       // Your code here, to diplay correct and incorrect options on the buttons
-      /*  if(operator.equals("+"))
-            ans=operand1+operand2;
+       int correctanswers=-100;
+        if(operator.equals("+"))
+            correctanswers=operand1+operand2;
         else if (operator.equals("-"))
-            ans=operand1-operand2;*/
+            correctanswers=operand1-operand2;
+        else if (operator.equals("/"))
+            correctanswers=operand1/operand2;
+        else
+            correctanswers=operand1*operand2;
+        correctButton=random.nextInt(4);
+        if (correctButton==0)
+        {
+            button1.setText(correctanswers + "");
+            button2.setText(correctanswers + 1 +"");
+            button3.setText(correctanswers - 1 +"");
+            button4.setText(correctanswers +2 +"");
+        }
+        if(correctButton==1)
+        {
+            button1.setText(correctanswers + 1 +"");
+            button2.setText(correctanswers + "");
+            button3.setText(correctanswers - 1 +"");
+            button4.setText(correctanswers +2 +"");
+        }
+        if(correctButton==2)
+        {
+            button1.setText(correctanswers -1 +"");
+            button2.setText(correctanswers + 1 +"");
+            button3.setText(correctanswers +"");
+            button4.setText(correctanswers +2 +"");
+        }
+        if (correctButton==3)
+        {
+            button1.setText(correctanswers + 2 + "");
+            button2.setText(correctanswers + 1 +"");
+            button3.setText(correctanswers - 1 +"");
+            button4.setText(correctanswers +"");
+        }
+
         if(matchCounter==3){    // if three matches are completed updatee the perfomrance in sharedpreferences
 
             matchCounter=0;
